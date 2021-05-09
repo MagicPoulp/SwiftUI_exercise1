@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct TutorDetail : View {
+struct DogDetail : View {
     var name: String
     var headline: String
     var bio: String
@@ -35,9 +35,9 @@ struct TutorDetail : View {
 }
 
 #if DEBUG
-struct TutorDetail_Previews : PreviewProvider {
+struct DogDetail_Previews : PreviewProvider {
     static var previews: some View {
-        TutorDetail(name: "Simon Ng", headline: "Founder of AppCoda", bio: "Founder of AppCoda. Author of multiple iOS prgramming books including Beginning iOS 12 Programming with Swift and Intermediate iOS 12 Programming with Swift. iOS Developer and Blogger.")
+        DogDetail(name: "Simon Ng", headline: "Founder of AppCoda", bio: "Founder of AppCoda. Author of multiple iOS prgramming books including Beginning iOS 12 Programming with Swift and Intermediate iOS 12 Programming with Swift. iOS Developer and Blogger.")
     }
 }
 #endif

@@ -9,12 +9,12 @@
 import SwiftUI
 
 struct ContentView : View {
-    var tutors: [Tutor] = testData
+    var dogs: [Dog] = testData
     
     var body: some View {
         NavigationView {
-            List(tutors) { tutor in
-                TutorCell(tutor: tutor)
+            List(dogs) { tutor in
+                DogCell(tutor: tutor)
             }.navigationBarTitle(Text("Who is your favorite?"))
         }
     }
@@ -23,15 +23,15 @@ struct ContentView : View {
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-        ContentView(tutors: testData)
+        ContentView(dogs: testData)
     }
 }
 #endif
 
-struct TutorCell : View {
-    let tutor: Tutor
+struct DogCell : View {
+    let tutor: Dog
     var body: some View {
-        return NavigationLink(destination: TutorDetail(name: tutor.name, headline: tutor.headline, bio: tutor.bio)) {
+        return NavigationLink(destination: DogDetail(name: tutor.name, headline: tutor.headline, bio: tutor.bio)) {
             Image(tutor.imageName)
                 .resizable(resizingMode: .stretch)
                 .frame(width: 80.0, height: 80.0)
