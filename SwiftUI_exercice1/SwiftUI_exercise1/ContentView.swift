@@ -9,17 +9,17 @@
 import SwiftUI
 import RxSwift
 
-struct BlocData {
-    var numFavorites = BehaviorSubject<Int>(value: 0)
+class BlocData : ObservableObject {
+    @Published var numFavorites = BehaviorSubject<Int>(value: 0)
+    let disposeBag = DisposeBag()
 }
+
+let blocData = BlocData()
 
 struct ContentView : View {
         
     let navBarColor: UIColor = themeActionColor
     var dogs: [Dog] = []
-    let blocData = BlocData()
-    @State var numFavorites: Int = 0
-    let disposeBag = DisposeBag()
 
     init(dogs: [Dog]?) {
         if dogs != nil {
@@ -33,7 +33,7 @@ struct ContentView : View {
 
         //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: navBarColor]
-        
+        /*
         blocData.numFavorites.subscribe({
             event in
                 switch event {
@@ -44,7 +44,7 @@ struct ContentView : View {
                 case .completed: break
                        // the observable has finished sending events.
                }
-        }).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)*/
     }
     
     var body: some View {
@@ -56,12 +56,12 @@ struct ContentView : View {
             .navigationBarItems(
                 trailing:
                     HStack() {
-                        Text("numFavorites")
+                        Text(String(try! blocData.numFavorites.value()))
                         Image(yellowStarIcon)
                             .resizable(resizingMode: .stretch)
                             .frame(width: 30.0, height: 30.0)
-                        }
-                    )
+                    }
+                )
 
         }.accentColor(Color(navBarColor))
     }
