@@ -33,6 +33,8 @@ struct TutorCell : View {
     var body: some View {
         return NavigationLink(destination: TutorDetail(name: tutor.name, headline: tutor.headline, bio: tutor.bio)) {
             Image(tutor.imageName)
+                .resizable(resizingMode: .stretch)
+                .frame(width: 80.0, height: 80.0)
                 .cornerRadius(40)
             VStack(alignment: .leading) {
                 Text(tutor.name)
