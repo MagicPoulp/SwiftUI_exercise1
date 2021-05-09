@@ -31,7 +31,7 @@ struct ContentView : View {
         NavigationView {
             List(dogs) { dog in
                 DogCell(dog: dog)
-            }.navigationBarTitle(Text("Who is your favorite?"), displayMode: .inline)
+            }.navigationBarTitle(Text("Which are your favorites?"), displayMode: .inline)
         }.accentColor(Color(navBarColor))
     }
 }

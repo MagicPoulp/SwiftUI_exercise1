@@ -9,12 +9,18 @@ import SwiftUI
 
 
 struct FavoriteButton : View {
-    var favorite = false
+    @State private var favorite = false
     
     var body: some View {
         favoriteButtonInternal(favorite: favorite)
         .resizable(resizingMode: .stretch)
         .frame(width: 30.0, height: 30.0)
+        .gesture(
+            TapGesture()
+            .onEnded { _ in
+                self.favorite = !favorite
+            }
+        )
     }
 }
 
