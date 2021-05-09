@@ -14,7 +14,7 @@ struct FavoriteButton : View {
     var body: some View {
         favoriteButtonInternal(favorite: favorite)
         .resizable(resizingMode: .stretch)
-        .frame(width: 20.0, height: 20.0)
+        .frame(width: 30.0, height: 30.0)
     }
 }
 

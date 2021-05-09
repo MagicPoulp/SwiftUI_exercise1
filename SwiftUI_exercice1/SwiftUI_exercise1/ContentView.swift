@@ -48,17 +48,21 @@ struct DogCell : View {
     let dog: Dog
     var body: some View {
         return NavigationLink(destination: DogDetail(imageName: dog.imageName, name: dog.name, headline: dog.headline, bio: dog.bio)) {
-            Image(dog.imageName)
-                .resizable(resizingMode: .stretch)
-                .frame(width: 80.0, height: 80.0)
-                .cornerRadius(40)
-            VStack(alignment: .leading) {
-                Text(dog.name)
-                Text(dog.headline)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+            HStack() {
+                Image(dog.imageName)
+                    .resizable(resizingMode: .stretch)
+                    .frame(width: 80.0, height: 80.0)
+                    .cornerRadius(40)
+                VStack(alignment: .leading) {
+                    Text(dog.name)
+                    Text(dog.headline)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+                Spacer() // to locate at opposite ends
+                FavoriteButton()
+                    .padding()
             }
-            FavoriteButton()
         }
     }
 }
