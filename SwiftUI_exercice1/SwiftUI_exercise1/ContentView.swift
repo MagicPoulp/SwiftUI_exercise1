@@ -9,17 +9,35 @@
 import SwiftUI
 import RxSwift
 
+// RXSwift is the most powerful with more operators
+// However, ObservableObject is needed to update the UI
+// So in this solution we use both.
 class BlocData : ObservableObject {
-    @Published var numFavorites = BehaviorSubject<Int>(value: 0)
+    var numFavorites = BehaviorSubject<Int>(value: 0)
+    @Published var numFavoritesBinded = 0
     let disposeBag = DisposeBag()
+    
+    init() {
+        numFavorites.subscribe({
+            event in
+                switch event {
+                case .next(let data):
+                    print(data)
+                    self.numFavoritesBinded = data
+                case .error(_): break
+                // an error occurred
+                case .completed: break
+                // the observable has finished sending events.
+               }
+        }).disposed(by: disposeBag)
+    }
 }
-
-let blocData = BlocData()
 
 struct ContentView : View {
         
     let navBarColor: UIColor = themeActionColor
     var dogs: [Dog] = []
+    @ObservedObject var blocData = BlocData()
 
     init(dogs: [Dog]?) {
         if dogs != nil {
@@ -33,30 +51,18 @@ struct ContentView : View {
 
         //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: navBarColor]
-        /*
-        blocData.numFavorites.subscribe({
-            event in
-                switch event {
-                case .next(let data):
-                    numFavorites = data
-                case .error(_): break
-                       // an error occurred
-                case .completed: break
-                       // the observable has finished sending events.
-               }
-        }).disposed(by: disposeBag)*/
     }
     
     var body: some View {
         NavigationView {
             List(dogs) { dog in
-                DogCell(dog: dog)
+                DogCell(dog: dog, blocData: blocData)
             }.navigationBarTitle(
                 Text("Which are your favorites?"), displayMode: .inline)
             .navigationBarItems(
                 trailing:
                     HStack() {
-                        Text(String(try! blocData.numFavorites.value()))
+                        Text(String(blocData.numFavoritesBinded))
                         Image(yellowStarIcon)
                             .resizable(resizingMode: .stretch)
                             .frame(width: 30.0, height: 30.0)
@@ -75,8 +81,21 @@ struct ContentView_Previews : PreviewProvider {
 }
 #endif
 
+
 struct DogCell : View {
     let dog: Dog
+    let blocData: BlocData
+    
+    func cb1 (newFavorite: Bool) -> Void {
+        var newValue = try! blocData.numFavorites.value()
+        if (newFavorite) {
+            newValue += 1
+        } else {
+            newValue -= 1
+        }
+        blocData.numFavorites.onNext(newValue)
+    }
+    
     var body: some View {
         return NavigationLink(destination: DogDetail(imageName: dog.imageName, name: dog.name, headline: dog.headline, bio: dog.bio)) {
             HStack() {
@@ -91,8 +110,17 @@ struct DogCell : View {
                         .foregroundColor(.gray)
                 }
                 Spacer() // to locate at opposite ends
-                FavoriteButton()
-                    .padding()
+                /*FavoriteButton(onTap: (newFavorite: Bool) -> Void {
+                    var newValue = blocData.numFavorites.value()
+                    if (newFavorite) {
+                        newValue++
+                    } else {
+                        newValue--
+                    }
+                    blocData.numFavorites.onNext(newValue)
+                })*/
+                FavoriteButton(onTapCallback: cb1)
+                .padding()
             }
         }
     }

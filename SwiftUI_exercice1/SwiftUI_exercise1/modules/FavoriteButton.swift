@@ -10,6 +10,7 @@ import SwiftUI
 
 struct FavoriteButton : View {
     @State private var favorite = false
+    let onTapCallback: (Bool) -> Void
     
     var body: some View {
         favoriteButtonInternal(favorite: favorite)
@@ -19,6 +20,7 @@ struct FavoriteButton : View {
             TapGesture()
             .onEnded { _ in
                 self.favorite = !favorite
+                onTapCallback(self.favorite)
             }
         )
     }
