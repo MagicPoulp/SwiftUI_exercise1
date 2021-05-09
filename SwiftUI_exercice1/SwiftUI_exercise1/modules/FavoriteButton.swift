@@ -24,12 +24,15 @@ struct FavoriteButton : View {
     }
 }
 
+let yellowStarIcon = "6707380_star_yellow"
+let blankStarIcon = "6707380_star"
+
 // https://stackoverflow.com/questions/56517610/conditionally-use-view-in-swiftui
 func favoriteButtonInternal(favorite: Bool) -> Image {
     if favorite {
-        return Image("6707380_star_yellow")
+        return Image(yellowStarIcon)
     }
-    return Image("6707380_star")
+    return Image(blankStarIcon)
 }
 
 #if DEBUG

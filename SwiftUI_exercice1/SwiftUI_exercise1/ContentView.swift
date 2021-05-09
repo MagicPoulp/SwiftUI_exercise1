@@ -31,7 +31,18 @@ struct ContentView : View {
         NavigationView {
             List(dogs) { dog in
                 DogCell(dog: dog)
-            }.navigationBarTitle(Text("Which are your favorites?"), displayMode: .inline)
+            }.navigationBarTitle(
+                Text("Which are your favorites?"), displayMode: .inline)
+            .navigationBarItems(
+                trailing:
+                    HStack() {
+                        Text("0")
+                        Image(yellowStarIcon)
+                            .resizable(resizingMode: .stretch)
+                            .frame(width: 30.0, height: 30.0)
+                        }
+                    )
+
         }.accentColor(Color(navBarColor))
     }
 }
