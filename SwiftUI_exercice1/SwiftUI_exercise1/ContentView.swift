@@ -109,16 +109,7 @@ struct DogCell : View {
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }
-                Spacer() // to locate at opposite ends
-                /*FavoriteButton(onTap: (newFavorite: Bool) -> Void {
-                    var newValue = blocData.numFavorites.value()
-                    if (newFavorite) {
-                        newValue++
-                    } else {
-                        newValue--
-                    }
-                    blocData.numFavorites.onNext(newValue)
-                })*/
+                Spacer()
                 FavoriteButton(onTapCallback: cb1)
                 .padding()
             }

@@ -3,7 +3,9 @@
 Author: Thierry Vilmart
 May 2021
 
-A training project with SwiftUI and RXSwift
+A training project with SwiftUI and RXSwift.
+
+A screenshot showing the result is available in the main folder,
 
 A table view shows a list of dogs that can be makred as favorites.
 The update of the number in the app bar is updated using RxSwift.
