@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		220F73382647CB7E00A23773 /* SimpleTableViewExampleSectioned.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220F73362647CB7E00A23773 /* SimpleTableViewExampleSectioned.storyboard */; };
-		220F73392647CB7E00A23773 /* SimpleTableViewExampleSectionedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220F73372647CB7E00A23773 /* SimpleTableViewExampleSectionedViewController.swift */; };
 		22234D3026471AB300140666 /* SwiftUI_exercise1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22234D2F26471AB300140666 /* SwiftUI_exercise1App.swift */; };
 		22234D3226471AB300140666 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22234D3126471AB300140666 /* ContentView.swift */; };
 		22234D3426471AB400140666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22234D3326471AB400140666 /* Assets.xcassets */; };
@@ -36,8 +34,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		220F73362647CB7E00A23773 /* SimpleTableViewExampleSectioned.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SimpleTableViewExampleSectioned.storyboard; sourceTree = "<group>"; };
-		220F73372647CB7E00A23773 /* SimpleTableViewExampleSectionedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTableViewExampleSectionedViewController.swift; sourceTree = "<group>"; };
 		22234D2C26471AB300140666 /* SwiftUI_exercise1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_exercise1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22234D2F26471AB300140666 /* SwiftUI_exercise1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_exercise1App.swift; sourceTree = "<group>"; };
 		22234D3126471AB300140666 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,8 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				22234D2F26471AB300140666 /* SwiftUI_exercise1App.swift */,
-				220F73362647CB7E00A23773 /* SimpleTableViewExampleSectioned.storyboard */,
-				220F73372647CB7E00A23773 /* SimpleTableViewExampleSectionedViewController.swift */,
 				22234D3126471AB300140666 /* ContentView.swift */,
 				22234D3326471AB400140666 /* Assets.xcassets */,
 				22234D3826471AB400140666 /* Info.plist */,
@@ -265,7 +259,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				220F73382647CB7E00A23773 /* SimpleTableViewExampleSectioned.storyboard in Resources */,
 				22234D3726471AB400140666 /* Preview Assets.xcassets in Resources */,
 				22234D3426471AB400140666 /* Assets.xcassets in Resources */,
 			);
@@ -334,7 +327,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				220F73392647CB7E00A23773 /* SimpleTableViewExampleSectionedViewController.swift in Sources */,
 				22234D3226471AB300140666 /* ContentView.swift in Sources */,
 				22234D3026471AB300140666 /* SwiftUI_exercise1App.swift in Sources */,
 			);

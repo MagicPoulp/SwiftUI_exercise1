@@ -11,5 +11,10 @@ https://github.com/ffi/ffi/issues/800
 
 # Links
 
-RxSwift blog
+super old 2017 RxSwift blog (do not run too old)
 https://www.thedroidsonroids.com/blog/rxswift-by-examples-1-the-basics
+
+// Recent table view blog
+// https://www.appcoda.com/swiftui-first-look/
+trick in the SceneDelegate to fix the black scrren in the above sample called Tutor
+https://stackoverflow.com/questions/57205114/swiftui-only-showing-a-black-screen
