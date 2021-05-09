@@ -1,11 +1,14 @@
 # SwiftUI_exercise1
 
 Author: Thierry Vilmart
+
 May 2021
 
 A training project with SwiftUI and RXSwift.
 
-A screenshot showing the result is available in the main folder,
+A screenshot showing the result is available in the main folder.
+
+https://raw.githubusercontent.com/MagicPoulp/SwiftUI_exercise1/master/screenshot%20working%20app%20v1.0.0.png
 
 A table view shows a list of dogs that can be makred as favorites.
 The update of the number in the app bar is updated using RxSwift.
@@ -16,6 +19,7 @@ and it looks fine.
 
 The table view was taken from the blog below, and was then customized (for colors),
 and a favorite star component was added.
+
 https://stackoverflow.com/questions/57205114/swiftui-only-showing-a-black-screen
 
 # Licenses
@@ -29,6 +33,7 @@ If Pod install fails try this;
 pod install will crash unless this is done:
 gem install ffi -- --enable-system-libffi --enable-libffi-alloc
 As explained here for Apple silicon:
+
 https://github.com/ffi/ffi/issues/800
 
 # Links
@@ -40,10 +45,13 @@ Good link about the ObservableObject to update the UI from an event
 https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-published-property-wrapper
 
 super old 2017 RxSwift blog (do not run too old)
+
 https://www.thedroidsonroids.com/blog/rxswift-by-examples-1-the-basics
 
 The table view was highly inspired from the blog below. And then customized.
 // Recent table view blog
 // https://www.appcoda.com/swiftui-first-look/
+
 trick in the SceneDelegate to fix the black scrren in the above sample called Tutor
+
 https://stackoverflow.com/questions/57205114/swiftui-only-showing-a-black-screen
