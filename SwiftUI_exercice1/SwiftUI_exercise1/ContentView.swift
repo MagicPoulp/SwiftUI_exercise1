@@ -7,12 +7,20 @@
 //
 
 import SwiftUI
+import RxSwift
+
+struct BlocData {
+    var numFavorites = BehaviorSubject<Int>(value: 0)
+}
 
 struct ContentView : View {
         
     let navBarColor: UIColor = themeActionColor
     var dogs: [Dog] = []
-    
+    let blocData = BlocData()
+    @State var numFavorites: Int = 0
+    let disposeBag = DisposeBag()
+
     init(dogs: [Dog]?) {
         if dogs != nil {
             self.dogs = dogs!
@@ -25,6 +33,18 @@ struct ContentView : View {
 
         //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: navBarColor]
+        
+        blocData.numFavorites.subscribe({
+            event in
+                switch event {
+                case .next(let data):
+                    numFavorites = data
+                case .error(_): break
+                       // an error occurred
+                case .completed: break
+                       // the observable has finished sending events.
+               }
+        }).disposed(by: disposeBag)
     }
     
     var body: some View {
@@ -36,7 +56,7 @@ struct ContentView : View {
             .navigationBarItems(
                 trailing:
                     HStack() {
-                        Text("0")
+                        Text("numFavorites")
                         Image(yellowStarIcon)
                             .resizable(resizingMode: .stretch)
                             .frame(width: 30.0, height: 30.0)
