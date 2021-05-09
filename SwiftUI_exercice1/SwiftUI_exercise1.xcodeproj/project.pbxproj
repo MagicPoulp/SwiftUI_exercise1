@@ -11,7 +11,6 @@
 		220A21FA2647F47100F0F362 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A21F62647F47100F0F362 /* Dog.swift */; };
 		220A21FB2647F47100F0F362 /* DogDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A21F72647F47100F0F362 /* DogDetail.swift */; };
 		220A21FD2647F7F500F0F362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 220A21FC2647F7F500F0F362 /* Assets.xcassets */; };
-		220A22062648199600F0F362 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A22052648199600F0F362 /* NavigationConfigurator.swift */; };
 		220A22082648223E00F0F362 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A22072648223E00F0F362 /* Theme.swift */; };
 		22234D3026471AB300140666 /* SwiftUI_exercise1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22234D2F26471AB300140666 /* SwiftUI_exercise1App.swift */; };
 		22234D3226471AB300140666 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22234D3126471AB300140666 /* ContentView.swift */; };
@@ -41,9 +40,8 @@
 /* Begin PBXFileReference section */
 		220A21F42647F47100F0F362 /* Dogs.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Dogs.xcassets; sourceTree = "<group>"; };
 		220A21F62647F47100F0F362 /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
-		220A21F72647F47100F0F362 /* DogDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogDetail.swift; sourceTree = "<group>"; };
+		220A21F72647F47100F0F362 /* DogDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = DogDetail.swift; sourceTree = "<group>"; tabWidth = 4; };
 		220A21FC2647F7F500F0F362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		220A22052648199600F0F362 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 		220A22072648223E00F0F362 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		22234D2C26471AB300140666 /* SwiftUI_exercise1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_exercise1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22234D2F26471AB300140666 /* SwiftUI_exercise1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_exercise1App.swift; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 		220A22042648196300F0F362 /* modules */ = {
 			isa = PBXGroup;
 			children = (
-				220A22052648199600F0F362 /* NavigationConfigurator.swift */,
 			);
 			path = modules;
 			sourceTree = "<group>";
@@ -355,7 +352,6 @@
 				220A21FB2647F47100F0F362 /* DogDetail.swift in Sources */,
 				220A21FA2647F47100F0F362 /* Dog.swift in Sources */,
 				220A22082648223E00F0F362 /* Theme.swift in Sources */,
-				220A22062648199600F0F362 /* NavigationConfigurator.swift in Sources */,
 				22234D3026471AB300140666 /* SwiftUI_exercise1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

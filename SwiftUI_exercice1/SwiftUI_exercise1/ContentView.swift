@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Tutors
+//  Dogs
 //
 //  Created by Sai Kambampati on 6/5/19.
 //  Copyright © 2019 AppCoda. All rights reserved.
@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView : View {
         
-    let navBarColor: UIColor = colorMarineBlue
+    let navBarColor: UIColor = themeActionColor
     var dogs: [Dog] = []
     
     init(dogs: [Dog]?) {
@@ -29,8 +29,8 @@ struct ContentView : View {
     
     var body: some View {
         NavigationView {
-            List(dogs) { tutor in
-                DogCell(tutor: tutor)
+            List(dogs) { dog in
+                DogCell(dog: dog)
             }.navigationBarTitle(Text("Who is your favorite?"), displayMode: .inline)
         }.accentColor(Color(navBarColor))
     }
@@ -45,16 +45,16 @@ struct ContentView_Previews : PreviewProvider {
 #endif
 
 struct DogCell : View {
-    let tutor: Dog
+    let dog: Dog
     var body: some View {
-        return NavigationLink(destination: DogDetail(name: tutor.name, headline: tutor.headline, bio: tutor.bio)) {
-            Image(tutor.imageName)
+        return NavigationLink(destination: DogDetail(imageName: dog.imageName, name: dog.name, headline: dog.headline, bio: dog.bio)) {
+            Image(dog.imageName)
                 .resizable(resizingMode: .stretch)
                 .frame(width: 80.0, height: 80.0)
                 .cornerRadius(40)
             VStack(alignment: .leading) {
-                Text(tutor.name)
-                Text(tutor.headline)
+                Text(dog.name)
+                Text(dog.headline)
                     .font(.subheadline)
                     .foregroundColor(.gray)
             }
