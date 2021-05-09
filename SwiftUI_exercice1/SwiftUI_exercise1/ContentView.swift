@@ -16,7 +16,8 @@ struct ContentView : View {
         }
 
         //https://stackoverflow.com/questions/56505528/swiftui-update-navigation-bar-title-color
-        let navBarColor = UIColor.blue
+        let navBarColor = UIColor(red: 80/255, green: 80/255, blue: 140/255, alpha: 1)
+        //let navBarColor = UIColor.blue
         //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: navBarColor]
 
@@ -30,7 +31,7 @@ struct ContentView : View {
         NavigationView {
             List(dogs) { tutor in
                 DogCell(tutor: tutor)
-            }.navigationBarTitle(Text("Who is your favorite?"))
+            }.navigationBarTitle(Text("Who is your favorite?"), displayMode: .inline)
         }
     }
 }
