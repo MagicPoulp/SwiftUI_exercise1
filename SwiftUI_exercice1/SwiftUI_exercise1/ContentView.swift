@@ -9,7 +9,22 @@
 import SwiftUI
 
 struct ContentView : View {
-    var dogs: [Dog] = testData
+    
+    init(dogs: [Dog]?) {
+        if dogs != nil {
+            self.dogs = dogs!
+        }
+
+        //https://stackoverflow.com/questions/56505528/swiftui-update-navigation-bar-title-color
+        let navBarColor = UIColor.blue
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: navBarColor]
+
+        //Use this if NavigationBarTitle is with displayMode = .inline
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: navBarColor]
+    }
+
+    var dogs: [Dog] = []
     
     var body: some View {
         NavigationView {
