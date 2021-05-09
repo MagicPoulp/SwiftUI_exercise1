@@ -58,6 +58,7 @@ struct DogCell : View {
                     .font(.subheadline)
                     .foregroundColor(.gray)
             }
+            FavoriteButton()
         }
     }
 }
