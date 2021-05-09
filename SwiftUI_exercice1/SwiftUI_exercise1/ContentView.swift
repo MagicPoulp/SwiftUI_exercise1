@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  SwiftUI_exercice1
+//  SwiftUI_exercise1
 //
 //  Created by Thierry Vilmart on 2021-05-08.
 //
