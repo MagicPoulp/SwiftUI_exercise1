@@ -57,12 +57,14 @@ struct ContentView : View {
         NavigationView {
             List(dogs) { dog in
                 DogCell(dog: dog, blocData: blocData)
+                //navigationBarTitle is depreacted in SwiftUI 2.0 (iOS14)
             }.navigationBarTitle(
                 Text("Which are your favorites?"), displayMode: .inline)
             .navigationBarItems(
                 trailing:
                     HStack() {
                         Text(String(blocData.numFavoritesBinded))
+                            .foregroundColor(Color(navBarColor))
                         Image(yellowStarIcon)
                             .resizable(resizingMode: .stretch)
                             .frame(width: 30.0, height: 30.0)
